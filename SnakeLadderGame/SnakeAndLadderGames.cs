@@ -9,7 +9,7 @@ namespace SnakeLadderGame
     public class SnakeAndLadderGames
     {
         const int NoRoll = 0, Snake = 1, Ladder = 2;
-        int DiePosition, position = 0;
+        int DiePosition, position = 0, option;
         public int DieRoll()
         {
             Random random = new Random();
@@ -22,9 +22,8 @@ namespace SnakeLadderGame
             while (this.position < 100)
             {
                 Random random = new Random();
-                int roll = random.Next(0, 3);
-
-                switch (roll)
+                option = random.Next(0, 3);
+                switch (option)
                 {
                     case NoRoll:
                         this.position += 0;
@@ -40,7 +39,6 @@ namespace SnakeLadderGame
                         this.position += this.DieRoll();
                         break;
                 }
-
             }
             Console.WriteLine("Die Rolled " + this.position);
 
