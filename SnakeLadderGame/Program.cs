@@ -6,6 +6,6 @@ public class program
     {
         SnakeAndLadderGames game = new SnakeAndLadderGames();
         game.DieRoll();
-        game.Game();
+        game.GamePlay();
     }
 }

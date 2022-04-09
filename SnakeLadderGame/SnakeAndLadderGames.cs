@@ -9,7 +9,7 @@ namespace SnakeLadderGame
     public class SnakeAndLadderGames
     {
         const int NoRoll = 0, Snake = 1, Ladder = 2;
-        int DiePosition, position = 0, option;
+        int DiePosition, position = 0, option, count;
         public int DieRoll()
         {
             Random random = new Random();
@@ -17,13 +17,13 @@ namespace SnakeLadderGame
             Console.WriteLine("Die Roll Position is: " + DiePosition);
             return DiePosition;
         }
-        public void Game()
+        public void GamePlay()
         {
             while (this.position < 100)
             {
                 Random random = new Random();
                 option = random.Next(0, 3);
-
+                
                 switch (option)
                 {
                     case NoRoll:
@@ -37,13 +37,19 @@ namespace SnakeLadderGame
                         }
                         break;
                     case Ladder:
-                        this.position += this.DieRoll();
+                        int maxValue = this.DieRoll();
+                        this.position += maxValue;
+                        if (this.position > 100)
+                        {
+                            this.position -= maxValue;
+                        }
                         break;
                 }
-
+                count++;
             }
+            Console.WriteLine("No Of Dice To Winning the Match" + "  " + count);
+            Console.WriteLine("You Have Win With " + this.position + " " + " Number");
             Console.WriteLine("Die Rolled " + this.position);
-
         }
     }
 }
