@@ -4,8 +4,10 @@ public class program
 {
     public static void Main(String[] args)
     {
-        SnakeAndLadderGames game = new SnakeAndLadderGames();
-        game.DieRoll();
-        game.GamePlay();
+            Console.WriteLine(" Snake and ladder game");
+            SnakeAndLadderGames game = new SnakeAndLadderGames();
+            game.dicerollp1();
+            game.dicerollp2();
+            game.winner();
     }
 }
