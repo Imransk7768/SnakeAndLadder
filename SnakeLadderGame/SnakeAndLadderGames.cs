@@ -8,10 +8,13 @@ namespace SnakeLadderGame
 {
     public class SnakeAndLadderGames
     {
-        const int position = 0;
-        public int dieRoll()
+        int DiePosition;
+        public int DieRoll()
         {
-            return position;
+            Random random = new Random();
+            DiePosition = random.Next(1, 7);
+            Console.WriteLine("Die Roll Position is: " + DiePosition);
+            return DiePosition;
         }
     }
 }
